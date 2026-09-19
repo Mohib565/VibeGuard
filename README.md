@@ -124,4 +124,4 @@ Course: DecodeLabs Industrial Training Program (Project 3 Milestone)[cite: 1]
 Domain Focus: Full-Stack Web Development, DevSecOps & Database Persistence[cite: 1]
 
 
-Copy this content into your `README.md` file, commit, and push it to GitHub. It will display high-visibility tech badges at the top of your repository page.
+
