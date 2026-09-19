@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeGuard | Security Auditor for AI Builders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand-box">
+            <span class="logo">🛡️</span>
+            <div>
+                <span class="brand-title">VibeGuard</span>
+                <span class="brand-sub">Production Integrity</span>
+            </div>
+        </div>
+
+        <div class="nav-right">
+            <div class="status-badge">
+                <span class="dot"></span>
+                <span id="dbState">Connected</span>
+            </div>
+            <button id="themeToggle" class="theme-btn" title="Toggle Light / Dark Mode">
+                <span id="themeEmoji">🌙</span>
+                <span id="themeTitle">Dark Mode</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="wrapper">
+        <!-- Hero Section with Relatable Vibe Coding Tools -->
+        <section class="hero">
+            <h1>Are you Vibe Coding without checking secrets?</h1>
+            <p>Scan your code repositories before deploying to make sure API keys, database credentials, and vulnerable queries aren't leaked to public GitHub.</p>
+            
+            <div class="ai-badges">
+                <span class="ai-pill">⚡ Cursor</span>
+                <span class="ai-pill">🐙 GitHub Copilot</span>
+                <span class="ai-pill">✨ Gemini</span>
+                <span class="ai-pill">🤖 ChatGPT</span>
+                <span class="ai-pill">🧠 Claude Code</span>
+                <span class="ai-pill">🌊 Windsurf</span>
+                <span class="ai-pill">🚀 Google Antigravity</span>
+            </div>
+        </section>
+
+        <!-- Input Box -->
+        <section class="box-card">
+            <form id="auditForm" class="scan-form">
+                <div class="input-row">
+                    <input type="url" id="repoUrl" class="repo-input" placeholder="https://github.com/owner/repository" required autocomplete="off">
+                    <button type="submit" class="scan-btn" id="btnScan">🔍 Scan Repository</button>
+                </div>
+
+                <div class="quick-actions">
+                    <span>Try testing with:</span>
+                    <button type="button" class="quick-btn" id="testRepoBtn">Your Cyber-Guard Repo</button>
+                </div>
+
+                <!-- Optional Custom Code Snippet Section -->
+                <div class="optional-container">
+                    <span class="optional-toggle" id="toggleOptional">
+                        <span>⚙️ Test a specific file or paste code directly <b>(Optional)</b></span>
+                        <span id="toggleArrow">▼</span>
+                    </span>
+
+                    <div class="optional-box" id="optionalBox">
+                        <label class="opt-label">Specific File Name (Optional):</label>
+                        <input type="text" id="customFileName" class="text-input" placeholder="e.g. server.js or src/config/supabase.js">
+                        
+                        <label class="opt-label">Code Snippet (Optional):</label>
+                        <textarea id="customSourceCode" class="code-area" rows="5" placeholder="// If you want to check a specific snippet right now, paste it here..."></textarea>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <!-- REAL-TIME LIVE AUDIT CONSOLE (Trust & Process Visualizer) -->
+        <section id="terminalContainer" class="terminal-box hidden">
+            <div class="terminal-head">
+                <div class="terminal-dots">
+                    <span class="tdot t-red"></span>
+                    <span class="tdot t-yellow"></span>
+                    <span class="tdot t-green"></span>
+                </div>
+                <div class="terminal-title">LIVE FILE-BY-FILE AUDIT STREAM</div>
+                <span id="streamStatusBadge" class="terminal-badge">RUNNING</span>
+            </div>
+            <div class="terminal-body" id="terminalFeed">
+                <!-- Live logs will be injected here in real-time -->
+            </div>
+        </section>
+
+        <!-- Saved Audits Database Box -->
+        <section class="box-card">
+            <div class="section-header">
+                <h2>Saved Security Audits</h2>
+                <button class="refresh-btn" id="btnRefresh">🔄 Refresh</button>
+            </div>
+
+            <div id="reportsFeed" class="reports-list">
+                <div class="empty-box">
+                    No repositories audited yet. Paste a link above to see the results.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
